@@ -4,21 +4,43 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float h;
-    float v;
+    public Vector2 inputVec;
+    public float speed;
 
     Rigidbody2D rigid;
+    SpriteRenderer spriter;
+    Animator anim;
 
-    void Awake() {
+    void Awake(){
+
         rigid = GetComponent<Rigidbody2D>();
+        spriter = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
     }
 
-    void Update() {
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+    void Update(){
+
+        inputVec.x = Input.GetAxisRaw("Horizontal");
+        inputVec.y = Input.GetAxisRaw("Vertical");
+
     }
 
-    void FixedUpdate() {
-        rigid.velocity = new Vector2(h, v);    
+    void FixedUpdate(){
+
+        Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + nextVec);
+
+    }
+
+    void LateUpdate(){
+
+        anim.SetFloat("Speed", inputVec.magnitude);
+
+        // 입력이 없는 경우에만 실행 캐릭터 플립
+        if(inputVec.x != 0){
+            spriter.flipX = inputVec.x < 0;
+        }
+        
     }
 }

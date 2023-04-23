@@ -2924,6 +2924,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9149e4da342ac3e46af458e1cd0c298d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputVec: {x: 0, y: 0}
+  speed: 3
 --- !u!70 &2082715677
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
