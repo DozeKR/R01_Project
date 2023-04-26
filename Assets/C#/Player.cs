@@ -7,9 +7,12 @@ public class Player : MonoBehaviour
     public Vector2 inputVec;
     public float speed;
 
+    public GameManager manager;
+
     Rigidbody2D rigid;
     SpriteRenderer spriter;
     Animator anim;
+    GameObject scanObject;
 
     void Awake(){
 
@@ -23,6 +26,10 @@ public class Player : MonoBehaviour
 
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
+
+        if(Input.GetButtonDown("Jump") && scanObject != null){
+            manager.Action(scanObject);
+        }
 
     }
 
@@ -41,6 +48,8 @@ public class Player : MonoBehaviour
         if(inputVec.x != 0){
             spriter.flipX = inputVec.x < 0;
         }
+
+    
         
     }
 }
