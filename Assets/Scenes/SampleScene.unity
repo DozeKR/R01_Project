@@ -460,6 +460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1662e890c102344b8eac2b31fe1ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talkText: {fileID: 529833014}
+  scanObject: {fileID: 0}
 --- !u!4 &1365890494
 Transform:
   m_ObjectHideFlags: 0
@@ -3059,7 +3061,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1893415295}
   - component: {fileID: 1893415294}
-  m_Layer: 0
+  - component: {fileID: 1893415297}
+  - component: {fileID: 1893415296}
+  m_Layer: 10
   m_Name: NPC 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3133,6 +3137,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1893415296
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893415293}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3.25, y: 3.5}
+  m_Direction: 0
+--- !u!50 &1893415297
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893415293}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2082715673
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,7 +3275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
+  dirVec: {x: 0, y: 0, z: 0}
   speed: 3
+  manager: {fileID: 1365890493}
 --- !u!70 &2082715677
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -10,6 +10,6 @@ public class GameManager : MonoBehaviour
 
     public void Action(GameObject scanObj){
         scanObject = scanObj;
-        talkText.text = "이것은" + scanObject.name;
+        talkText.text = "이것은 " + scanObject.name;
     }
 }
