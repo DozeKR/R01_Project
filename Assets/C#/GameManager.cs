@@ -7,6 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public Text talkText;
     public GameObject scanObject;
+    public GameObject menu;
+
+    void Update() {
+        if(Input.GetButtonDown("Cancel")){
+            menu.SetActive(true);
+        }
+    }
 
     public void Action(GameObject scanObj){
         scanObject = scanObj;

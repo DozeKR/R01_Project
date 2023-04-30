@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
 
         if(rayHit.collider != null){
             scanObject = rayHit.collider.gameObject;
+            scanObject.SetActive(true);
         }
         else{
             scanObject = null;
