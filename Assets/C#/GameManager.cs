@@ -10,7 +10,11 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
 
     void Update() {
+        
         if(Input.GetButtonDown("Cancel")){
+            if(menu.activeSelf)
+                menu.SetActive(false);
+            else
             menu.SetActive(true);
         }
     }
